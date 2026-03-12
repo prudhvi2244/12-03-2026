@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: 12-03-2026
+
+logging:
+  file:
+    name: logs/app.log
