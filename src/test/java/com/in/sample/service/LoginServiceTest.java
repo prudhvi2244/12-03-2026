@@ -13,8 +13,13 @@ class LoginServiceTest {
     LoginService loginService;
 
     @Test
-    void testLoginWithValidUSernameAndPassword(){
+    void testLoginWithValidUSernameAndEmail(){
         assertTrue(loginService.login("admin","admin"));
+    }
+
+    @Test
+    void testLoginWithInValidUSernameAndEmail(){
+        assertTrue(loginService.login("admin1","admin1"));
     }
 
 }
