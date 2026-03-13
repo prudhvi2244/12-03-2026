@@ -4,10 +4,15 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class LoginServiceTest {
+
+    Logger logger= LoggerFactory.getLogger(LoginServiceTest.class);
 
     @InjectMocks
     LoginService loginService;
@@ -15,6 +20,7 @@ class LoginServiceTest {
     @Test
     void testLoginWithValidUSernameAndEmail(){
         assertTrue(loginService.login("admin","admin"));
+        logger.info("Test Login With Valid Username and Password");
     }
 
     @Test
