@@ -18,14 +18,20 @@ class LoginServiceTest {
     LoginService loginService;
 
     @Test
-    void testLoginWithValidUSernameAndEmail(){
+    void testLoginWithValidUsernameAndEmail(){
         assertTrue(loginService.login("admin","admin"));
         logger.info("Test Login With Valid Username and Email");
     }
     @Test
-    void testLoginWithInValidUSernameAndEmail(){
+    void testLoginWithInValidUsernameAndEmail(){
         assertFalse(loginService.login("admin1","admin1"));
         logger.info("Test Login With InValid Username and Email");
+    }
+
+    @Test
+    void testLoginWithValidUsernameAndInvalidEmail(){
+        assertFalse(loginService.login("admin1","admin1"));
+        logger.info("Test Login With Valid Username and Invalid Email");
     }
 
 
